@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Pickup : MonoBehaviour {
 
+    public int pickupValue;
 	private AudioSource _pickupSound;
 	private bool _collected = false;
 
@@ -41,7 +42,7 @@ public class Pickup : MonoBehaviour {
 		}
 
 		_pickupSound.Play();
-		other.GetComponent<Player>().AddPickup();
+		other.GetComponent<Player>().AddPickup(pickupValue);
 		_mesh.SetActive(false);
 		_collected = true;
 	}
